@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { About } from "./components/About";
+import { Skills } from "./components/Skills";
+import { TechStack } from "./components/TechStack";
 export default function App() {
-   const [dark, setDark] = useState(()=> {const savedTheme = sessionStorage.getItem("theme");
-    return savedTheme ? JSON.parse(savedTheme) : true; 
+  const [dark, setDark] = useState(() => {
+    const savedTheme = sessionStorage.getItem("theme");
+    return savedTheme ? JSON.parse(savedTheme) : true;
   })
   useEffect(() => {
     document.body.style.background = dark ? "#030712" : "#f8fafc";
@@ -14,6 +19,11 @@ export default function App() {
   return (
     <div style={{ fontFamily: "'Inter', system-ui, sans-serif", overflowX: "hidden" }}>
       <Navbar dark={dark} setDark={setDark} />
+      <Hero dark={dark} />
+      <About dark={dark} />
+      <Skills dark={dark} />
+      <TechStack dark={dark} />
+
     </div>
   );
 }
