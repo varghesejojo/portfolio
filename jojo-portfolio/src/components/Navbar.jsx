@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NAV_LINKS } from "../data/portfolioData";
 import{ MenuIcon, CloseIcon, SunIcon, MoonIcon, DownloadIcon } from "../icons/Icons";
 
-function Navbar({ dark, setDark }) {
+export function Navbar({ dark, setDark }) {
 const [open, setOpen] = useState(false);
 const [scrolled, setScrolled] = useState(false);
 const [activeLink, setActiveLink] = useState("About");
@@ -165,4 +165,3 @@ className={`fixed top-4 left-1/2 -translate-x-1/2 w-[94%] max-w-6xl z-50 rounded
 
 );
 }
-export default Navbar;
